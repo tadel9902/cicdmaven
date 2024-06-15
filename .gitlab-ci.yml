@@ -1,0 +1,62 @@
+
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+before_script:
+  - echo "Start CI/CD"
+  - ls -lsa
+  - echo "commit name :$CI_COMMIT_REF_NAME" 
+  - apk update && apk add openssh-client bash
+  
+
+build:
+  stage: build
+  only:
+    - main
+  script:
+    - echo "download java version 8"
+    - echo "download maven"
+    - echo "run script java and maven to build project"
+
+
+release:
+  stage: release
+  only:
+    - main
+  script:
+    - echo "run script to release project"
+    - echo "copy folder build to next stage"
+
+test:
+  stage: test
+  only:
+    - main
+  script:
+    - echo "run script to test project"
+    - echo "check quality code"
+    - echo "check code coverage"
+    - echo "check security code"
+    - echo "check code smell"
+    - echo "check code duplication"
+    - echo "check code vulnerability"
+    - echo "check code is passed all test cases"
+deploy:
+  stage: deploy
+  only:
+    - main
+  before_script:
+    - ls -lsa
+    - apk update && apk add openssh-client bash
+  script:
+    - eval $(ssh-agent -s)
+
+    - echo "Add ssh key"
+    - echo "Using ssh connect to server"
+    - echo "run script to deploy project"
+    - echo "check project is deployed successfully"
+    - echo "check project is running successfully"
+    - echo "check project is accessible"
+    - echo "check project is working fine"
