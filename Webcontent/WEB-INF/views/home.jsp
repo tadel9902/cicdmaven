@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ</title>
+    <title>Trang Chủ của tôi</title>
     <link rel="stylesheet" href="<c:url value = '/include/css/style.css' />">
     <link rel="stylesheet" href="<c:url value = '/include/css/toast.css' />" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -44,7 +44,7 @@
     <div class="category_carousel _100vw mg-10_0">
         <div class="_1200px flex_between">
             <div class="category_carousel_left bg-white">
-                <div class="category_title bg-blue color-white pd-10_50">Danh Mục Sách</div>
+                <div class="category_title bg-blue color-white pd-10_50">Danh Mục Sách Hàng Đầu</div>
                 <ul class="category_ul">
                 	<c:forEach var = "item" items = "${categories}">
                 		<li class="category_ui_item pd-10"><a href="<c:url value = '/category/${item.category_id}.htm' />">${item.category_name}</a></li>
