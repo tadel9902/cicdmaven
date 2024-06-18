@@ -39,6 +39,6 @@ jobs:
         image: tadel990212/dockerimgpush
         tags: latest
         registry: docker.io
-        dockerfile: Dockerfile.ci
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
