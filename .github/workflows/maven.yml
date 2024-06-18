@@ -36,7 +36,7 @@ jobs:
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: tadel9902/dockerimgpush
+        image: tadel990212/dockerimgpush
         tags: latest
         registry: docker.io
         dockerfile: Dockerfile.ci
